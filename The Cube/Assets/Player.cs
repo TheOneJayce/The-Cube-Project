@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         inputVector = new Vector3(Input.GetAxisRaw("Horizontal") * speed, rb.velocity.y, Input.GetAxisRaw("Vertical") * speed);
-
+        transform.LookAt(transform.position + new Vector3(inputVector.x, 0, inputVector.z));
 
         rb.velocity = inputVector;
     }
