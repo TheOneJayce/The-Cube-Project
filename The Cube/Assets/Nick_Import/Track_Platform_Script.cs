@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class Track_Platform_Script : MonoBehaviour
 {
+    [Header("General Settings")]
+
+    float RandomStartDealy = 0;
+    float speed = 2f;
+
+    [Header("References")]
+
+    GameObject TrackManager;
+    private Vector3 targetScale;
+
+    [Header("Toggles")]
+
     bool IsMoving = false;
     bool IsDestroyed = false;
-    float RandomStartDealy = 0;
-
-    private Vector3 targetScale;
-    float speed = 2f;
+    public bool IsEndOfTrack;
 
     // Start is called before the first frame update
     void Start()
     {
+        TrackManager = GameObject.FindGameObjectWithTag("TrackManager");
+
         targetScale = new Vector3(0f, 0f, 0f);
     }
 
@@ -47,8 +58,14 @@ public class Track_Platform_Script : MonoBehaviour
         RandomStartDealy = Random.Range(0.25f, 0.65f);
         yield return new WaitForSeconds(RandomStartDealy);
         IsMoving = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.4f);
         IsMoving = false;
+
+        if(IsEndOfTrack == true)
+        {
+            TrackManager.GetComponent<Track_Manager_Script>().ResetTimer();
+        }
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -56,7 +73,6 @@ public class Track_Platform_Script : MonoBehaviour
         if(collision.gameObject.tag == "PlatformBreak")
         {
             IsDestroyed = true;
-            Debug.Log("IsDestoryed");
         }
     }
 }
