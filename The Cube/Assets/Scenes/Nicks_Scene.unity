@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_Fog: 1
+  m_FogColor: {r: 0.7432804, g: 1, b: 0.7122642, a: 1}
+  m_FogMode: 1
+  m_FogDensity: 1
+  m_LinearFogStart: 25
+  m_LinearFogEnd: 50
   m_AmbientSkyColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -149,7 +149,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.8494018, b: 0.43867922, a: 1}
+  m_Color: {r: 1, g: 0.7555746, b: 0.08018869, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -229,6 +229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level_Track_Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850813101506594118, guid: 352d41fc27aa9494481cf8f18b473d84,
+        type: 3}
+      propertyPath: TimeLeft
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3175628458748326569, guid: 352d41fc27aa9494481cf8f18b473d84,
         type: 3}
@@ -328,7 +333,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.377314, g: 0.5754717, b: 0.41694555, a: 0}
+  m_BackGroundColor: {r: 0.75, g: 1, b: 0.7990196, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -342,7 +347,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -368,8 +373,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567695013}
-  m_LocalRotation: {x: -0.055135798, y: 0.9343866, z: -0.16598745, w: -0.31037048}
-  m_LocalPosition: {x: 9.421229, y: 15.521748, z: 31.279785}
+  m_LocalRotation: {x: -0.21163356, y: 0.67633086, z: -0.21278511, w: -0.67268884}
+  m_LocalPosition: {x: 13.438942, y: 15.290491, z: -0.4689772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
