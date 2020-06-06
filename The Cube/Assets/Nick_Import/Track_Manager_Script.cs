@@ -25,6 +25,10 @@ public class Track_Manager_Script : MonoBehaviour
     public Text CoinsText;
     public Slider ProgressSlider;
 
+    public Transform CoinImageSpawnPoint;
+    public GameObject CoinImage;
+    public GameObject DestroyedImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,14 @@ public class Track_Manager_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject TemporaryCoin = (GameObject.FindGameObjectWithTag("Coin"));
+            TemporaryCoin.GetComponent<Coin_Script>().DisableImage();
+            Destroy(TemporaryCoin);
+            CurrentCoins += 1;
+        }
+
         TimerText.text = TimeLeft.ToString("0");
         CoinsText.text = CurrentCoins + "/" + TotalCoins.ToString("0");
 
@@ -52,12 +64,6 @@ public class Track_Manager_Script : MonoBehaviour
             StopTimer = true;
             CurrentRow += NumberOfRows / 100;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Destroy(GameObject.FindGameObjectWithTag("Coin"));
-            CurrentCoins += 1;
-        }
     }
 
     void ActivatePlatforms()
@@ -74,5 +80,18 @@ public class Track_Manager_Script : MonoBehaviour
     {
         StopTimer = false;
         TimeLeft = 3.5f;
+    }
+
+    public void CoinSetup(int Row, GameObject thecoin)
+    {
+        GameObject image = Instantiate(CoinImage, CoinImageSpawnPoint);
+        image.transform.Translate(Vector3.up * Row * 50);
+        thecoin.GetComponent<Coin_Script>().LinkToImage(image);
+    }
+
+    public void CoinDestroyed(GameObject theobject)
+    {
+        Instantiate(DestroyedImage, theobject.transform);
+       // theobject.SetActive(false);
     }
 }

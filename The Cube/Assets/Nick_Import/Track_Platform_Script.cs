@@ -72,6 +72,8 @@ public class Track_Platform_Script : MonoBehaviour
     {
         if(collision.gameObject.tag == "PlatformBreak")
         {
+            this.GetComponent<Rigidbody>().useGravity = true;
+            this.GetComponent<Rigidbody>().isKinematic = false;
             IsDestroyed = true;
         }
     }
