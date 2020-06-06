@@ -56,7 +56,7 @@ public class Track_Platform_Script : MonoBehaviour
     {
 
         RandomStartDealy = Random.Range(0.25f, 0.65f);
-        yield return new WaitForSeconds(RandomStartDealy);
+        //yield return new WaitForSeconds(RandomStartDealy);
         IsMoving = true;
         yield return new WaitForSeconds(1.4f);
         IsMoving = false;
