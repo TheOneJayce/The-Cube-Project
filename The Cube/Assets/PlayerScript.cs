@@ -40,4 +40,18 @@ public class PlayerScript : MonoBehaviour
             jump = false;
         }
     }
+
+    private void OnTriggerEnter(Collider colliderTag)
+    {
+        switch (colliderTag.tag)
+        {
+            case "Coin":
+                Destroy(colliderTag.gameObject);
+                break;
+            default:
+                break;
+        }
+    }
+
+
 }
