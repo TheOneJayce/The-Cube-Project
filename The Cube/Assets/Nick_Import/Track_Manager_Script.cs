@@ -7,7 +7,7 @@ public class Track_Manager_Script : MonoBehaviour
 {
     [Header("General Settings")]
 
-    public float TimeLeft = 3;
+    public float TimeLeft = 1;
     public bool StopTimer = false;
 
     public float NumberOfRows = 10f;
@@ -21,6 +21,7 @@ public class Track_Manager_Script : MonoBehaviour
     [Header("References")]
 
     GameObject[] Platforms;
+    GameObject[] Enemies;
     public Text TimerText;
     public Text CoinsText;
     public Slider ProgressSlider;
@@ -38,13 +39,13 @@ public class Track_Manager_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject TemporaryCoin = (GameObject.FindGameObjectWithTag("Coin"));
             TemporaryCoin.GetComponent<Coin_Script>().DisableImage();
             Destroy(TemporaryCoin);
             CurrentCoins += 1;
-        }
+        }*/
 
         TimerText.text = TimeLeft.ToString("0");
         CoinsText.text = CurrentCoins + "/" + TotalCoins.ToString("0");
@@ -69,17 +70,24 @@ public class Track_Manager_Script : MonoBehaviour
     void ActivatePlatforms()
     {
         Platforms = GameObject.FindGameObjectsWithTag("Platform");
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (GameObject platform in Platforms)
         {
             platform.GetComponent<Track_Platform_Script>().ActivatePlatformMovement();
         }
+
+        foreach (GameObject enemyobject in Enemies)
+        {
+            enemyobject.GetComponent<AI_Ball_Script>().ActivateEnemy();
+        }
+
     }
 
     public void ResetTimer()
     {
         StopTimer = false;
-        TimeLeft = 3.5f;
+        TimeLeft = 1.5f;
     }
 
     public void CoinSetup(int Row, GameObject thecoin)

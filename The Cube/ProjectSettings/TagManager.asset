@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - TrackManager
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX
