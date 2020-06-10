@@ -56,10 +56,20 @@ public class PlayerScript : MonoBehaviour
                 Destroy(colliderTag.gameObject);
                 currentCoins += 1;
                 break;
+            case "PowerOne":
+                Destroy(colliderTag.gameObject);
+                StartCoroutine(PowerOne(5f));
+                break;
             default:
                 break;
         }
     }
 
+    IEnumerator PowerOne(float waitTime)
+    {
+        speed = 30f;
+        yield return new WaitForSeconds(waitTime);
+        speed = 5f;
+    }
 
 }
