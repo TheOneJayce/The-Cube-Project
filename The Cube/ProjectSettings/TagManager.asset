@@ -11,6 +11,8 @@ TagManager:
   - Coin
   - Enemy
   - WinTrigger
+  - PU1
+  - PowerOne
   layers:
   - Default
   - TransparentFX
