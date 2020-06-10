@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+    // For coin Pick Up
+    public Text coinsText;
+    public int currentCoins;
+    public int TotalCoins = 3;
+
     public Rigidbody rb;
     public float speed = 15f;
     public float jumpForce = 20f;
@@ -29,6 +35,7 @@ public class PlayerScript : MonoBehaviour
             jump = true;
         }
 
+        coinsText.text = currentCoins + "/" + TotalCoins.ToString("0");
     }
 
     void FixedUpdate()
@@ -47,6 +54,7 @@ public class PlayerScript : MonoBehaviour
         {
             case "Coin":
                 Destroy(colliderTag.gameObject);
+                currentCoins += 1;
                 break;
             default:
                 break;

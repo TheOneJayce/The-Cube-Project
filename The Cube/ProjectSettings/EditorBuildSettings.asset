@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: d3964640042c5064ab748e885f48d7c8
+  - enabled: 1
     path: Assets/Scenes/Taylor_Scene.unity
     guid: 80ab5bb0a4080e34db383b441a06f1b7
   m_configObjects: {}
