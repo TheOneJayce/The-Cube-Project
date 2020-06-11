@@ -87,7 +87,7 @@ public class Track_Manager_Script : MonoBehaviour
     public void ResetTimer()
     {
         StopTimer = false;
-        TimeLeft = 1.5f;
+        TimeLeft = 0.5f;
     }
 
     public void CoinSetup(int Row, GameObject thecoin)

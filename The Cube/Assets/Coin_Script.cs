@@ -37,9 +37,20 @@ public class Coin_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "PlatformBreak")
+        if (other.gameObject.tag == "PlatformBreak")
         {
             TrackManager.GetComponent<Track_Manager_Script>().CoinDestroyed(TheImage);
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+            if(other.gameObject.GetComponent<Player_AreaTrigger_Script>() != null)
+            {
+                return;
+            }
+
+            other.GetComponent<PlayerScript>().currentCoins += 1;
+            Destroy(gameObject);
         }
     }
 
