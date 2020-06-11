@@ -48,7 +48,7 @@ public class Track_Manager_Script : MonoBehaviour
         }*/
 
         TimerText.text = TimeLeft.ToString("0");
-        CoinsText.text = CurrentCoins + "/" + TotalCoins.ToString("0");
+        //CoinsText.text = CurrentCoins + "/" + TotalCoins.ToString("0");
 
         row = Mathf.Lerp(row, CurrentRow, Time.deltaTime);
         ProgressSlider.value = row;
