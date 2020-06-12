@@ -48,17 +48,17 @@ public class PlayerCollision_Script : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "WinTrigger" && playerScriptRef.currentCoins >= playerScriptRef.TotalCoins)
+        if(other.gameObject.tag == "WinTrigger")// && playerScriptRef.currentCoins >= playerScriptRef.TotalCoins)
         {
             winMenu.SetActive(true);
             Player.SetActive(false);
         }
-        else if(other.gameObject.tag == "WinTrigger" && playerScriptRef.currentCoins <= playerScriptRef.TotalCoins)
+        /*else if(other.gameObject.tag == "WinTrigger" && playerScriptRef.currentCoins <= playerScriptRef.TotalCoins)
         {
             loseMenu.SetActive(true);
             Player.SetActive(false);
 
             explanationText.text = "You must collect all of the coins";
-        }
+        }*/
     }
 }

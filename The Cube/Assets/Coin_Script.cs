@@ -49,7 +49,7 @@ public class Coin_Script : MonoBehaviour
                 return;
             }
 
-            other.GetComponent<PlayerScript>().currentCoins += 1;
+            other.GetComponent<Player_Health_Script>().CurrentHealth += 25;
             Destroy(gameObject);
         }
     }
