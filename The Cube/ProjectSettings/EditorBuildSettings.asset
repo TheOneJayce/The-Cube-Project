@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Taylor_Level.unity
     guid: 7b26c8ce025cd7748931eb1737415cd6
+  - enabled: 1
+    path: Assets/Scenes/Level_Two.unity
+    guid: 690ef870e79322141ab9e66072511034
+  - enabled: 1
+    path: Assets/Scenes/Level_Three.unity
+    guid: bd87081e3bc3d894e8561ea5368ce935
   - enabled: 0
     path: Assets/Scenes/Taylor_Scene.unity
     guid: 80ab5bb0a4080e34db383b441a06f1b7
