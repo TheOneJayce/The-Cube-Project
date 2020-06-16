@@ -77,4 +77,5 @@ public class Track_Platform_Script : MonoBehaviour
             IsDestroyed = true;
         }
     }
+
 }

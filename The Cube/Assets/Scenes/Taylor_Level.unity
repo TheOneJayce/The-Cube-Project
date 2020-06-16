@@ -1465,6 +1465,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8890799382453694527, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890799382453694527, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8898454090745743214, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
         type: 3}
       propertyPath: m_AnchorMax.y
