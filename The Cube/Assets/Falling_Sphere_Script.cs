@@ -22,8 +22,9 @@ public class Falling_Sphere_Script : MonoBehaviour
     {
         if(collision.gameObject.tag == "Platform")
         {
-            collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            collision.gameObject.GetComponent<Track_Platform_Script>().BecomeVoid();
+
             //this.GetComponent<Falling_Sphere_Script>().enabled = false;
         }
     }

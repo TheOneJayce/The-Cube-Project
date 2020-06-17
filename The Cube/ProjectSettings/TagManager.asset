@@ -13,6 +13,7 @@ TagManager:
   - WinTrigger
   - PU1
   - PowerOne
+  - Loose
   layers:
   - Default
   - TransparentFX

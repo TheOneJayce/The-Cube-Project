@@ -26,21 +26,27 @@ public class PlayerScript : MonoBehaviour
     bool MoveDelayActive = false;
     bool IsSquished = false;
     bool IsFloating = false;
+
+    public bool IsStuck;
+    public bool IsFalling;
+
     // Start is called before the first frame update
     void Start()
     {
         TrackManager = GameObject.FindGameObjectWithTag("TrackManager");
         rb = GetComponent<Rigidbody>();
-        DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
-        GameObject g = GameObject.FindGameObjectWithTag("PU1");
+       // DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
+       // GameObject g = GameObject.FindGameObjectWithTag("PU1");
         //emitter = g.GetComponent<MeshEmitter>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+        if(IsFalling == true)
+        {
+            return;
+        }
 
         //Squish
         if (Input.GetKeyDown(KeyCode.S) && IsSquished == false)
@@ -75,6 +81,11 @@ public class PlayerScript : MonoBehaviour
             //return;
         }
 
+        if (IsStuck == true)
+        {
+            return;
+        }
+
         //Snap Movement
         if (Input.GetKey(KeyCode.A) && transform.position.x != -14 && MoveDelayActive == false &&
             LeftTriggerCheck.GetComponent<Player_AreaTrigger_Script>().LeftBlocked == false)
@@ -101,7 +112,7 @@ public class PlayerScript : MonoBehaviour
         */
 
         //Coin text does not seem to be grabbing anything so I don't know how to fix this error
-        coinsText.text = currentCoins + "/" + TotalCoins.ToString("0");
+       // coinsText.text = currentCoins + "/" + TotalCoins.ToString("0");
 
     }
 
@@ -115,12 +126,12 @@ public class PlayerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = inputVector;
+       /* rb.velocity = inputVector;
         if (jump)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jump = false;
-        }
+        }*/
     }
 
    /* private void OnTriggerEnter(Collider colliderTag)

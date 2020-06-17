@@ -29,11 +29,13 @@ public class Track_Manager_Script : MonoBehaviour
     public Transform CoinImageSpawnPoint;
     public GameObject CoinImage;
     public GameObject DestroyedImage;
+    GameObject Player;
 
     // Start is called before the first frame update
     void Start()
     {
         Platforms = GameObject.FindGameObjectsWithTag("Platform");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

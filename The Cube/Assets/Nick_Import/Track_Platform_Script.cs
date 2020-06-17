@@ -20,6 +20,9 @@ public class Track_Platform_Script : MonoBehaviour
     bool IsDestroyed = false;
     public bool IsEndOfTrack;
 
+    public GameObject VoidPlatform;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +79,13 @@ public class Track_Platform_Script : MonoBehaviour
             this.GetComponent<Rigidbody>().isKinematic = false;
             IsDestroyed = true;
         }
+    }
+
+    public void BecomeVoid()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        VoidPlatform.SetActive(true);
     }
 
 }

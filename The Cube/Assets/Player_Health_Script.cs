@@ -9,6 +9,7 @@ public class Player_Health_Script : MonoBehaviour
     public float CurrentHealth = 0;
 
     public Slider HealthBar;
+    public GameObject loseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,12 @@ public class Player_Health_Script : MonoBehaviour
         HealthBar.value = Mathf.Lerp(HealthBar.value, CurrentHealth / StartingHealth, Time.deltaTime * 10);
         //CurrentHealth = Mathf.Lerp(CurrentHealth, StartingHealth, Time.deltaTime);
         //HealthBar.value = CurrentHealth;
+
+        if(CurrentHealth <= 0)
+        {
+            loseMenu.SetActive(true);
+            this.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator HealthDecay()
