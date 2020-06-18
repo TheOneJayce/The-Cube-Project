@@ -784,6 +784,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4424588607576488383, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
+        type: 3}
+      propertyPath: loseMenu
+      value: 
+      objectReference: {fileID: 1943758506}
     - target: {fileID: 8890799382453694467, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
         type: 3}
       propertyPath: m_LocalPosition.x
