@@ -51,6 +51,7 @@ public class PlayerScript : MonoBehaviour
         //Squish
         if (Input.GetKeyDown(KeyCode.S) && IsSquished == false)
         {
+            SoundManager.PlaySound(SoundManager.Sound.PlayerDuck);
             IsSquished = true;
             transform.localScale -= new Vector3(0, 1.5f, 0);
             transform.Translate(Vector3.down * 1.25f);
@@ -65,6 +66,7 @@ public class PlayerScript : MonoBehaviour
         //Floating
         if (Input.GetKeyDown(KeyCode.W) && IsFloating == false)
         {
+            SoundManager.PlaySound(SoundManager.Sound.PlayerFloat);
             IsFloating = true;
             transform.localScale -= new Vector3(0, 1.5f, 0);
             transform.Translate(Vector3.up * 2f);
@@ -91,12 +93,15 @@ public class PlayerScript : MonoBehaviour
             LeftTriggerCheck.GetComponent<Player_AreaTrigger_Script>().LeftBlocked == false)
         {
             transform.Translate(Vector3.left * 7);
+            SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
             StartCoroutine(TheMoveDelay());
+            
         }
 
         if (Input.GetKey(KeyCode.D) && transform.position.x != 14 && MoveDelayActive == false &&
             RightTriggerCheck.GetComponent<Player_AreaTrigger_Script>().RightBlocked == false)
         {
+            SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
             transform.Translate(Vector3.right * 7);
             StartCoroutine(TheMoveDelay());
         }
