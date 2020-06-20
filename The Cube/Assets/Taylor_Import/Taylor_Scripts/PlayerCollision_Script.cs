@@ -14,6 +14,8 @@ public class PlayerCollision_Script : MonoBehaviour
 
     public Text explanationText;
 
+    public bool IsInvincible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,13 @@ public class PlayerCollision_Script : MonoBehaviour
         //If player collides with obstacle, they lose
         if(collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Enemy")
         {
+            if(IsInvincible == true)
+            {
+                Destroy(collision.gameObject);
+                IsInvincible = false;
+                return;
+            }
+
             loseMenu.SetActive(true);
             Player.SetActive(false);
 
