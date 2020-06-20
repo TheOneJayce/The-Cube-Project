@@ -89,21 +89,45 @@ public class PlayerScript : MonoBehaviour
         }
 
         //Snap Movement
-        if (Input.GetKey(KeyCode.A) && transform.position.x != -14 && MoveDelayActive == false &&
-            LeftTriggerCheck.GetComponent<Player_AreaTrigger_Script>().LeftBlocked == false)
+        if (Input.GetKey(KeyCode.A) && transform.position.x != -14 && MoveDelayActive == false)
         {
-            transform.Translate(Vector3.left * 7);
-            SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
-            StartCoroutine(TheMoveDelay());
-            
+            if(LeftTriggerCheck.GetComponent<Player_AreaTrigger_Script>().LeftBlocked == false)
+            {
+                transform.Translate(Vector3.left * 7);
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
+                StartCoroutine(TheMoveDelay());
+            }
+
+            if (LeftTriggerCheck.GetComponent<Player_AreaTrigger_Script>().LeftBlocked == true 
+                && this.GetComponent<PlayerCollision_Script>().IsInvincible == true)
+            {
+                transform.Translate(Vector3.left * 7);
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
+                StartCoroutine(TheMoveDelay());
+                LeftTriggerCheck.GetComponent<Player_AreaTrigger_Script>().LeftBlocked = false;
+            }
+
+
         }
 
-        if (Input.GetKey(KeyCode.D) && transform.position.x != 14 && MoveDelayActive == false &&
-            RightTriggerCheck.GetComponent<Player_AreaTrigger_Script>().RightBlocked == false)
+        if (Input.GetKey(KeyCode.D) && transform.position.x != 14 && MoveDelayActive == false)
         {
-            SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
-            transform.Translate(Vector3.right * 7);
-            StartCoroutine(TheMoveDelay());
+            if (RightTriggerCheck.GetComponent<Player_AreaTrigger_Script>().RightBlocked == false)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
+                transform.Translate(Vector3.right * 7);
+                StartCoroutine(TheMoveDelay());
+            }
+
+            if (RightTriggerCheck.GetComponent<Player_AreaTrigger_Script>().RightBlocked == true 
+                && this.GetComponent<PlayerCollision_Script>().IsInvincible == true)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
+                transform.Translate(Vector3.right * 7);
+                StartCoroutine(TheMoveDelay());
+                RightTriggerCheck.GetComponent<Player_AreaTrigger_Script>().RightBlocked = false;
+            }
+
         }
 
         /*
