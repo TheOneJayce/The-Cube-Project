@@ -7,11 +7,15 @@ public class Special_Platform_Script : MonoBehaviour
     [Header("General Settings")]
 
     [Header("References")]
-    public GameObject[] StickyPlatform;
+    public GameObject StickyPlatform;
+    public GameObject SpikePlatform_Short;
+    public GameObject SpikePlatform_Long;
+    public GameObject FallingPlatform;
 
     [Header("Toggles")]
     public bool IsStickyPlatform;
-    public bool IsSpikePlatform;
+    public bool IsSpikePlatform_Short;
+    public bool IsSpikePlatform_Long;
     public bool IsFallingPlatform;
 
     // Start is called before the first frame update
@@ -19,16 +23,23 @@ public class Special_Platform_Script : MonoBehaviour
     {
         if(IsStickyPlatform == true)
         {
-            foreach(GameObject sticky in StickyPlatform)
-            {
-                sticky.SetActive(true);
-            }
+            StickyPlatform.SetActive(true);
+        }
+
+        if (IsSpikePlatform_Short == true)
+        {
+            SpikePlatform_Short.SetActive(true);
+        }
+
+        if (IsSpikePlatform_Long == true)
+        {
+            SpikePlatform_Long.SetActive(true);
+        }
+
+        if(IsFallingPlatform == true)
+        {
+            FallingPlatform.SetActive(true);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
