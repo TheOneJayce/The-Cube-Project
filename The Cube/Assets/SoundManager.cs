@@ -9,6 +9,8 @@ public static class SoundManager
         PlayerMove,
         PlayerFloat,
         PlayerDuck,
+        UiRollver,
+        UIClick,
     }
    public static void PlaySound (Sound sound)
     {
