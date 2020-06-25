@@ -2275,6 +2275,11 @@ PrefabInstance:
       propertyPath: soundAudioClipArray.Array.data[4].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 19d645877a7a0344a85c84e791d986f3, type: 3}
+    - target: {fileID: 6279344837606296495, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
+        type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8355640303576718620, guid: e7950c95641efb44f8c2bb1a20a3ca7c,
         type: 3}
       propertyPath: m_IsActive

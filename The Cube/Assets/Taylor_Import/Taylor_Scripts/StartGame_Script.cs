@@ -7,7 +7,7 @@ public class StartGame_Script : MonoBehaviour
     {
         //Change to first level name when Level One is finished
         //SceneManager.LoadScene("SceneName"); 
-
+        SoundManager.PlaySound(SoundManager.Sound.UIClick);
         SceneManager.LoadScene("Taylor_Level");
 
         //Delete when scene is ready
