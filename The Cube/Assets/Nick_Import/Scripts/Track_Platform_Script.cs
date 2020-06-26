@@ -21,6 +21,7 @@ public class Track_Platform_Script : MonoBehaviour
     public bool IsEndOfTrack;
 
     public GameObject VoidPlatform;
+    public GameObject VoidMesh;
 
 
     // Start is called before the first frame update
@@ -86,6 +87,7 @@ public class Track_Platform_Script : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         VoidPlatform.SetActive(true);
+        VoidMesh.SetActive(false);
     }
 
 }
