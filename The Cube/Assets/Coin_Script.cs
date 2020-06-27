@@ -49,6 +49,7 @@ public class Coin_Script : MonoBehaviour
                 return;
             }
 
+            SoundManager.PlaySound(SoundManager.Sound.LifePick);
             other.GetComponent<Player_Health_Script>().CurrentHealth += 25;
             Destroy(gameObject);
         }

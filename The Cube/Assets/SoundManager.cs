@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class SoundManager
 {
+    private static bool deleteSound;
+
     public enum Sound
     {
         PlayerMove,
@@ -11,12 +13,16 @@ public static class SoundManager
         PlayerDuck,
         UiRollver,
         UIClick,
+        PowerUp,
+        LifePick,
     }
    public static void PlaySound (Sound sound)
     {
         GameObject soundObject = new GameObject("Sound");
         AudioSource auidoSource = soundObject.AddComponent<AudioSource>();
         auidoSource.PlayOneShot(GetAudioClip(sound));
+        
+
     }
 
     private static AudioClip GetAudioClip(Sound sound)
@@ -30,6 +36,11 @@ public static class SoundManager
         }
         Debug.LogError("Sound" + sound + " not found!");
         return null;
+    }
+
+    static IEnumerator DestroySoundObject(float wait)
+    {
+        yield return new WaitForSeconds(wait);
     }
 
 }

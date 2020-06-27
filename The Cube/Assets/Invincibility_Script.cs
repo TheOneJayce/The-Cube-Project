@@ -16,6 +16,7 @@ public class Invincibility_Script : MonoBehaviour
                 return;
             }
 
+            SoundManager.PlaySound(SoundManager.Sound.PowerUp);
             other.GetComponent<PlayerCollision_Script>().IsInvincible = true;
             Destroy(gameObject);
         }
